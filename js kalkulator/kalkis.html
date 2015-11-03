@@ -1,0 +1,73 @@
+<html>
+<script>
+
+function calculatethefield() {
+  var calculatorfield = document.getElementById("calcfield").value;
+  var output = eval(calculatorfield);
+  document.getElementById("calcfield").value = output;
+}
+
+/*Current problems as of 1.november 2015
+Console reacts to the variable being set with the following:
+Uncaught TypeError: Cannot read property 'innerHTML' of null
+
+When I write something into it, the console only logs 'undefined';
+
+- Update: 3 november
+
+Now, its doesnt show an error. But its not console log it either.
+
+*/
+</script>
+
+<style>
+
+.calculator {
+  width: 80%;
+  margin: 20px;
+  padding: 40px;
+}
+
+.calculator input {
+  width: 40%;
+  height: 40px;
+  font-size: 2rem;
+}
+
+span {
+  border-radius: 50%;
+  padding: 10px;
+  margin: 20px;
+  position: relative;
+}
+
+.smallbuttons span {
+  font-size: 2rem;
+  background: linear-gradient(grey,lightgrey);
+  top: 20px;
+}
+
+.bigbuttons span {
+  font-size: 2.5rem;
+  background: linear-gradient(#B2D5E4,#0096F7);
+  top: 60px;
+  left: 50px;
+}
+
+</style>
+
+<head>
+<title>JS kalkulator</title>
+</head>
+
+<body>
+<div class="calculator">
+<input type="text" name="calcfield" id="calcfield">
+
+<div class="smallbuttons"><span>+</span><span>-</span><span>x</span><span>/</span></div>
+
+<div class="bigbuttons"><span>C</span><span onClick="calculatethefield()">=</span></div>
+</div>
+<body>
+
+</html>
